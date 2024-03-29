@@ -1,0 +1,27 @@
+<table class="table">
+  <thead class="thead-dark">
+    <tr>
+      <th>Id</th>
+      <th>Score One</th>
+      <th>Score Two</th>
+      <th>Teams One</th>
+      <th>Teams Two</th>
+      <th>Actions</th>
+    </tr>
+  </thead>
+  <tbody>
+    <tr *ngFor="let line of matchesTab">
+      <td>{{ line.id }}</td>
+      <td>{{ line.scoreOne }}</td>
+      <td>{{ line.scoreTwo }}</td>
+      <td>{{ line.teamOne }}</td>
+      <td>{{ line.teamTwo }}</td>
+      <td>
+        <button type="button" class="btn btn-success mr-2" [routerLink]="['/editMatch',line.id]" (click)="displayMatch(line.id)">Display</button>
+        <button type="button" class="btn btn-warning mr-2" [routerLink]="['/editMatch',line.id]" (click)="editMatch(line.id)">Edit</button>
+        <button type="button" class="btn btn-danger mr-2"(click)="deleteMatch(line.id)">Delete</button>
+
+      </td>
+    </tr>
+  </tbody>
+</table>

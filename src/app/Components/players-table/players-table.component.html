@@ -1,0 +1,35 @@
+<table class="table">
+    <thead class="thead-dark">
+      <tr>
+        <th scope="col">Id </th>
+        <th scope="col">Name </th>
+        <th scope="col">Age</th>
+        <th scope="col">Position</th>
+        <th scope="col">Nbre</th>
+        <th scope="col">Actions</th>
+
+      </tr>
+    </thead>
+    <tbody>
+      <tr *ngFor="let plr of playersTab">
+        <td >{{plr.id}}</td>
+        <td>{{plr.name}}</td>
+        <td>{{plr.age}}</td>
+        <td>{{plr.position}}</td>
+        <td>{{plr.nbre}}</td>
+        <td>
+          <button type="button" class="btn btn-success mr-2" [routerLink]="['/editPlayer',plr.id]" >Display</button>
+          <button type="button" class="btn btn-warning mr-2" [routerLink]="['/editPlayer',plr.id]" >Edit</button>
+          <button type="button" class="btn btn-danger mr-2"(click)="deletePlayer(plr.id)">Delete</button>
+  
+        </td>
+
+
+      </tr>
+      
+    </tbody>
+  </table>
+  
+
+
+

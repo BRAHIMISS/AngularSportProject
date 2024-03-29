@@ -1,0 +1,167 @@
+<div
+  class="hero overlay"
+  style="background-image: url('assets/images/bg_3.jpg')"
+>
+  <div class="container">
+    <div class="row align-items-center">
+      <div class="col-lg-9 mx-auto text-center">
+        <h1 class="text-white">Signup</h1>
+      </div>
+    </div>
+  </div>
+</div>
+
+<div class="site-section">
+  <div class="container">
+    <div class="row">
+      <div class="col-lg-6" style="margin-left: 25%">
+        <form [formGroup]= "signupForm">
+          <div class="form-group">
+            <input
+              type="text"
+              class="form-control"
+              formControlName="firstName"
+              placeholder="First Name"
+            />
+          </div>
+
+          <div
+            *ngIf="
+              signupForm.controls['firstName'].invalid &&
+              (signupForm.controls['firstName'].touched ||
+                signupForm.controls['firstName'].dirty)
+            "
+          >
+            <div
+              *ngIf="signupForm.controls['firstName'].errors?.['required']"
+              style="color: red"
+            >
+              first name Required
+            </div>
+            <div
+              *ngIf="signupForm.controls['firstName'].errors?.['minlength']"
+              style="color: red"
+            >
+              first name have at least 3 chars
+            </div>
+          </div>
+          <div class="form-group">
+            <input
+              type="text"
+              class="form-control"
+              formControlName="lastName"
+              placeholder="Last Name"
+            />
+          </div>
+          <div
+            *ngIf="
+              signupForm.controls['lastName'].invalid &&
+              (signupForm.controls['lastName'].touched ||
+                signupForm.controls['lastName'].dirty)
+            "
+          >
+            <div
+              *ngIf="signupForm.controls['lastName'].errors?.['required']"
+              style="color: red"
+            >
+              Last name Required
+            </div>
+            <div
+              *ngIf="signupForm.controls['lastName'].errors?.['minlength']"
+              style="color: red"
+            >
+              Last name have at least 3 chars
+            </div>
+          </div>
+
+          <div class="form-group">
+            <input
+              type="text"
+              class="form-control"
+              formControlName="email"
+              placeholder="Email"
+            />
+          </div>
+
+          <div
+            *ngIf="
+              signupForm.controls['email'].invalid &&
+              (signupForm.controls['email'].touched ||
+                signupForm.controls['email'].dirty)
+            "
+          >
+            <div
+              *ngIf="signupForm.controls['email'].errors?.['required']"
+              style="color: red"
+            >
+              email Required
+            </div>
+          
+          </div>
+          <div class="form-group">
+            <input
+              type="password"
+              class="form-control"
+              formControlName="password"
+              placeholder="Password"
+            />
+          </div>
+
+          <div
+            *ngIf="
+              signupForm.controls['password'].invalid &&
+              (signupForm.controls['password'].touched ||
+                signupForm.controls['password'].dirty)
+            "
+          >
+            <div
+              *ngIf="signupForm.controls['password'].errors?.['required']"
+              style="color: red"
+            >
+              Password Required
+            </div>
+            <div
+              *ngIf="signupForm.controls['password'].errors?.['minlength']"
+              style="color: red"
+            >
+              Password have at least 3 chars
+            </div>
+          </div>
+
+          <div class="form-group">
+            <input
+              type="number"
+              class="form-control"
+              formControlName="tel"
+              placeholder="Telephone"
+            />
+          </div>
+          <div
+            *ngIf="
+              signupForm.controls['tel'].invalid &&
+              (signupForm.controls['tel'].touched ||
+                signupForm.controls['tel'].dirty)
+            "
+          >
+            <div
+              *ngIf="signupForm.controls['tel'].errors?.['required']"
+              style="color: red"
+            >
+              Tel Required
+            </div>
+          
+          </div>
+
+          <div class="form-group">
+            <input
+              type="submit"
+              class="btn btn-primary py-3 px-5"
+              value="Signup"
+              (click)= "signup()"
+            />
+          </div>
+        </form>
+      </div>
+    </div>
+  </div>
+</div>

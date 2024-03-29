@@ -1,0 +1,25 @@
+<table class="table" >
+    <thead style="background-color: gray; color: beige;">
+        <tr>
+            <th>Id</th>
+            <th>Name</th>
+            <th>Owner</th>
+            <th>Foundation</th>
+            <th>Actions</th>
+        </tr>
+    </thead>
+    <tbody>
+        <tr *ngFor="let tm of teamsTab">
+            <td>{{tm.id}}</td>
+            <td>{{tm.name}}</td>
+            <td>{{tm.owner}}</td>
+            <td>{{tm.foundation}}</td>
+            <td>
+                    <button type="button" class="btn btn-success mr-2" [routerLink]="['/editTeam',tm.id]" >Display</button>
+                    <button type="button" class="btn btn-warning mr-2" [routerLink]="['/editTeam',tm.id]" > Edit</button>
+                    <button type="button" class="btn btn-danger mr-2"(click)="deleteTeam(tm.id)">Delete</button>
+     
+        </tr>
+        
+    </tbody>
+</table>
